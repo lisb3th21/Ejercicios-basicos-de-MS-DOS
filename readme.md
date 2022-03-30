@@ -114,9 +114,9 @@
 
 ---
 
-1. Utilizando el editor de textos de MS-DOS, crea un archivo de texto denominado EJER.TXT,
+1. **Utilizando el editor de textos de MS-DOS, crea un archivo de texto denominado EJER.TXT,
 con el siguiente contenido, y almacénalo dentro de la carpeta TEXTOS (dentro de la estructura
-del ejercicio anterior):
+del ejercicio anterior):**
 
     > “La información dentro de los discos se almacena en forma de archivos. Un archivo o fichero es un conjunto de datos que MS-DOS almacena en un disco y cuyo control interno es realizado por el sistema operativo, aunque desde el punto de vista lógico el control es del usuario”
 
@@ -125,7 +125,7 @@ del ejercicio anterior):
     ```bat
     new-item ejer.txt
 
-    set-content .\ejer.txt
+    set-content ./ejer.txt
 
     cp ejer.txt ./PARTE1/APLI/WORD/TEXTOS
     ```
@@ -133,9 +133,80 @@ del ejercicio anterior):
 2. **Copia el archivo EJER.TXT en AGENDA**
    
    ```bat
-   cp ejer.txt ./PARTE1/VARIOS
+   copy ejer.txt ./PARTE1/VARIOS/AGENDA
    ```
 
-3. Borra el archivo almacenado en la carpeta TEXTOS.
+3. **Borra el archivo almacenado en la carpeta TEXTOS.**
    
-   Para 
+   Para eliminar el archivo de la carpeta TEXTOS debemos ejecutar el siguiente comando:
+
+   ```bat
+   rm -r ./PARTE1/APLI/WORD/TEXTOS/
+   ```
+
+4. **Añade el siguiente párrafo al archivo EJER.TXT:**
+
+    >“Cada archivo tiene un nombre y una extensión que los distingue del resto de archivos”
+
+    ```bat
+    Set-Content EJER.txt
+    ```
+
+    A continuación veremos algo parecido a esto:
+
+    ```bat
+    Supply values for the following parameters:
+    Value[0]: Cada archivo tiene un nombre y una extensión que los distingue del resto de archivos
+    Value[1]: 
+    ```
+
+    Aquí añadiremos el texto y saldremos del editor.
+
+5. **Copia el archivo EJER.TXT en la carpeta BASIC.**
+
+    Para copiar el archivo EJER.txt realizamos el siguiente comando:
+
+    ```bat
+    cp EJER.txt ./PARTE1/PROG/BASIC
+    ```
+
+6. **Cambia el nombre del archivo almacenado en AGENDA por FICHERO.TXT**
+
+    Para cambiar el nombre del archivo que esta en agenda hacemos lo siguiente:
+
+    ```bat
+    Ren ejer.txt fichero.txt
+    ```
+
+7. **Mueve el archivo FICHERO.TXT a la carpeta BASIC**
+   
+   ```bat
+   move fichero.txt ./PARTE1/PROG/BASIC
+   ```
+
+8. **Abre el archivo EJER.TXT y borra la primera frase; almacena el nuevo archivo con el nombre NUEVO.TXT dentro de la carpeta BASIC.**
+
+    Para eliminar la primera línea del fichero utilizamos lo siguiente: 
+
+    ```bat
+    edit nuevo.txt
+    ```
+
+    Se nos abrirá un editor de texto que va integrado en la terminal y eliminamos la primera línea del documento. Escribiremos `:x` y `enter`.
+
+9. **Copia el archivo NUEVO.TXT en la carpeta NOTAS.**
+
+    ```bat
+    Copy nuevo.txt ./PARTE1/APLI/WORD/NOTAS/
+    ```
+
+10. **¿Cuántos archivos hay en la carpeta BASIC? ¿Y en NOTAS?**
+
+    En la carpeta *BASIC* nos encontramos con 2 archivos. Mientras que en *NOTAS* nos encontramos con 1 solo archivo.
+
+## Ejercicio 3
+
+---
+
+1. 
+

@@ -308,7 +308,7 @@ del ejercicio anterior):**
 
     Y nos quedará una estructura de directorios así:
 
-    ![Ejercicio 3.6](images\ejercicio6.png)
+    ![Ejercicio 3.6](images/ejercicio6.png)
 
 7. **Cambia de lugar los archivos almacenados en DATOS1 y DATOS2 de forma que TYCHO.TXT quede guardado dentro DATOS2 y KEPLER.TXT en DATOS1**
 
@@ -342,3 +342,110 @@ del ejercicio anterior):**
 9. **Abre el archivo KEPLER.TXT almacenado en la carpeta CIENCIA y añade el siguiente texto:**
 
     >“Kepler aplicó sus teorías a los satélites de Júpiter, descubiertos por Galileo a través de un pequeño telescopio, cuya introducción en la observación astronómica constituye uno de los hitos de la astronomía.”
+
+    Para ello realizamos lo siguiente:
+
+    ```powershell
+    echo "Kepler aplicó sus teorías a los satélites de Júpiter, descubiertos por Galileo a través de un pequeño telescopio, cuya introducción en la observación astronómica constituye uno de los hitos de la astronomía." >> .\KEPLER.txt
+    ```
+
+10. **Cambia el nombre del archivo anterior por GALILEO.txt**
+
+    ```powershell
+    ren .\KEPLER.txt .\GALILEO.txt
+    ```
+
+    Y nos quedará una estructura de archivos y directorios así:
+
+    ![Ejercicio 3.10](images/ejercicio10.png)
+
+## Ejercicio 4
+
+---
+
+1. **Crea en la carpeta raíz de la unidad A: una carpeta denominada TECINFO**
+
+    ```bat
+    mkdir A
+    mkdir .\A\TECNIFO
+     ```
+
+2. **Crea dentro de TECINFO el siguiente archivo de texto y llámalo HARD.TXT**
+
+    >“El HARDWARE está constituido por los elementos físicos del ordenador. Consta esencialmente de componentes electrónicos que proporcionan el soporte necesario para la interpretación y ejecución de las operaciones elementales que realiza el ordenador”
+
+    Para hacer esto primero nos movemos a la carpeta *TECNIFO* y añadimos el texto con `echo`
+
+    ```powershell
+    cd .\A\TECNIFO\
+    echo "El HARDWARE está constituido por los elementos físicos del ordenador. Consta esencialmente de componentes electrónicos que proporcionan el soporte necesario para la interpretación y ejecución de las operaciones elementales que realiza el ordenador" > HARD.txt
+    ```
+
+3. **Crea dentro de TECINFO el siguiente archivo de texto y llámalo SOFT.TXT**
+
+    >“El SOFTWARE es el conjunto de elementos lógicos necesarios para que el ordenador realice las funciones que se le encomiendan. Está formado por los programas, es decir, por un conjunto ordenado de instrucciones, comprensibles por la máquina, que permiten desarrollar tareas concretas”
+
+    ```powershell
+    echo "El SOFTWARE es el conjunto de elementos lógicos necesarios para que el ordenador realice las funciones que se le encomiendan. Está formado por los programas, es decir, por un conjunto ordenado de instrucciones, comprensibles por la máquina, que permiten desarrollar tareas concretas" > SOFT.txt
+    ```
+
+4. **Mueve el contenido de TECINFO a la carpeta APLI del disquete A utilizado para realizar los ejercicios anteriores**
+
+    Desde el disco *A* hacemos lo siguiente:
+
+    ```powershell
+    move .\TECNIFO\* ..\PARTE1\APLI\
+    ```
+
+5. **Crea un nuevo archivo formado por la unión de HARD.TXT y SOFT.TXT, sin volver a escribir el texto, y guárdalo en la carpeta AGENDA con el nombre ORDER.TXT**
+
+    Primero nos movemos a la carpeta *APLI* para luego unir los dos archivos de texto. Este archivo donde lo unimos tendrá la extencion `.temp` por lo que después lo renombraremos a *ORDER.txt* y finalmente lo moveremos a *AGENDA*.
+
+    ```powershell
+    cd ..\PARTE1\APLI\
+    type *.txt >nuevo.temp
+    ren .\nuevo.temp ORDER.txt
+    move .\ORDER.txt ..\VARIOS\AGENDA\
+    ```
+
+6. **Elimina la carpeta TECINFO**
+
+    Elimino la carpeta *TECNIFO* desde la *APLI*.
+
+    ```powershell
+    rmdir ..\..\A\TECNIFO\
+    ```
+
+7. **Copia a la vez los archivos HARD.TXT y SOFT.TXT en la carpeta VARIOS**
+
+    Ubicados en *APLI* movemos los dos archivos a *VARIOS*.
+
+    ```powershell
+     move .\*.txt ..\VARIOS\
+     ```
+
+8. **Cambia la extensión de los archivos contenidos en AGENDA por .TYP**
+
+    Nos movemos a *AGENDA* y procedemos a cambiarle la extención:
+
+    ```powershell
+    cd ..\VARIOS\AGENDA\
+    ren .\ORDER.txt ORDER.typ
+    ```
+
+9. **Cambia la primera letra del nombre de todos los archivos del directorio APLI que empiecen por la letra C y tengan extensión DOC de forma que empiecen con la letra S**
+
+    Nos ubicamos en el directorio *APLI* y cambiamos los nombres de los archivos que coincidan: 
+
+    ```powershell
+    cd .\APLI\
+    ren .\C*.doc S*.doc
+    ```
+
+10. **Copia los archivos contenidos en la carpeta APLI que tengan extensión DOC en la carpeta AGENDA**
+
+    Desde la carpeta *APLI* hacemos lo siguiente: 
+
+    ```powershell
+     copy *.doc ..\VARIOS\AGENDA\
+    ```

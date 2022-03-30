@@ -188,11 +188,15 @@ del ejercicio anterior):**
 
     Para eliminar la primera línea del fichero utilizamos lo siguiente: 
 
-    ```bat
-    edit nuevo.txt
+    ```powershell
+    edit ejer.txt
     ```
 
-    Se nos abrirá un editor de texto que va integrado en la terminal y eliminamos la primera línea del documento. Escribiremos `:x` y `enter`.
+    Se nos abrirá un editor de texto que va integrado en la terminal y eliminamos la primera línea del documento. Escribiremos `:x` y `enter`. Después cambiaremos el nombre del fichero: 
+
+    ```powershell
+    Ren ejer.txt fichero.txtç
+    ```
 
 9. **Copia el archivo NUEVO.TXT en la carpeta NOTAS.**
 
@@ -208,5 +212,88 @@ del ejercicio anterior):**
 
 ---
 
-1. 
+1. **Borra la carpeta ACCESS y en su lugar crea una nueva carpeta llamada ASTRO**
+
+    Puesto que `ACCES` es un directorio vacio bastara con realizar lo siguiente: 
+
+   ```powershell
+   rmdir .\PARTE1\APLI\ACCESS\
+   ```
+
+    A continuación realizamos el siguiente comando para crear la carpeta ASTRO:
+
+    ```bat
+    mkdir .\PARTE1\APLI\ASTRO
+    ```
+
+    Así quedará la estructura del directorio:
+
+    ![Ejercicio 3.1](images/ejercicio3.png)
+
+2. **Crea la siguiente estructura de subcarpetas dentro de la carpeta ASTRO.**
+
+    ![Ejercicio 3.2](images/ejercicio32.png)
+
+   Para crear la estructura mostrada debemos hacer lo siguiente:
+
+   a. Primero nos movemos a la carpeta ASTRO:
+
+   ```bat
+     cd .\PARTE1\APLI\ASTRO\
+   ```
+
+   b. Procedemos a crear la estructura de directorios:
+
+   ```bat
+   mkdir HISTORIA
+   mkdir CIENCIA
+   cd .\HISTORIA\
+   mkdir DATOS1
+   mkdir DATOS2
+   cd ..\CIENCIA\
+   mkdir ASTRO1
+   mkdir ASTRO2
+   ```
+
+   Después de hacer esto nos quedara la siguiente estructura:
+
+   ![Ejercicio 3.2.1](images/ejercicio321.png)
+
+3. **Sitúate en la carpeta CIENCIA y desde allí muestra el listado de archivos y subcarpetas de la carpeta HISTORIA**
+
+    Primero nos ubicamos en la carpeta CIENCIA:
+
+    ```bat
+    cd .\APLI\ASTRO\CIENCIA\
+    ```
+
+    Después mostramos el listado de archivos y subcarpetas de HISTORIA con `tree`. Utilizamos el parametro `/f` para que muestre tambien los archivos:
+
+    ```bat
+    tree /f ..\HISTORIA\
+    ```
+
+    Esto nos mostrará lo siguiente: 
+
+    ![Ejercicio 3.3](images\ejercicio33.png)
+
+4. **Utilizando el editor de MS-DOS crea el siguiente archivo de texto y guárdalo con el nombre TYCHO.TXT dentro de la carpeta DATOS1**
+
+    >“La importancia de Tycho Brahe (1546-1601) es debida a sus trabajos observacionales, que registraron posiciones notables del Sol, la Luna y los planetas”
+
+    Ubicados en la carpeta raíz realizamos el siguiente comando para crear el archivo con texto:
+
+    ```powershell
+    cd .\APLI\ASTRO\HISTORIA\DATOS1\
+    New-Item TYCHO.txt 
+    Set-Content .\TYCHO.txt
+    ```
+
+    Con `set-content` se nos mostrará una interfaz donde podremos introducir el texto. 
+
+5. **Utilizando de nuevo el editor de textos de MS-DOS crea el siguiente archivo de texto, y guárdalo con el nombre KEPLER.TXT dentro de la carpeta DATOS2**
+
+    ```powershell
+    Set-Content -Path .\KEPLER.txt
+    ```
 

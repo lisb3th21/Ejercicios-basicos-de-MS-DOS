@@ -273,9 +273,9 @@ del ejercicio anterior):**
     tree /f ..\HISTORIA\
     ```
 
-    Esto nos mostrará lo siguiente: 
+    Esto nos mostrará lo siguiente:
 
-    ![Ejercicio 3.3](images\ejercicio33.png)
+    ![Ejercicio 3.3](images/ejercicio33.png)
 
 4. **Utilizando el editor de MS-DOS crea el siguiente archivo de texto y guárdalo con el nombre TYCHO.TXT dentro de la carpeta DATOS1**
 
@@ -297,3 +297,48 @@ del ejercicio anterior):**
     Set-Content -Path .\KEPLER.txt
     ```
 
+6. **Copia los archivos TYCHO.TXT y KEPLER.TXT en la carpeta CIENCIA**
+
+    Primero copiamos `TYCHO.txt`:
+
+    ```poweshell
+    copy ..\DATOS1\TYCHO.txt ..\..\CIENCIA\
+    copy .\KEPLER.txt ..\..\CIENCIA\
+    ```
+
+    Y nos quedará una estructura de directorios así:
+
+    ![Ejercicio 3.6](images\ejercicio6.png)
+
+7. **Cambia de lugar los archivos almacenados en DATOS1 y DATOS2 de forma que TYCHO.TXT quede guardado dentro DATOS2 y KEPLER.TXT en DATOS1**
+
+   Movemos `KEPLER` a *DATOS1* desde la carpeta *DATOS2*:
+
+   ```powershell
+     move .\KEPLER.txt .
+   ```
+
+   Después movemos `TYCHO` a *DATOS2* desde la carpeta *DATOS1*:
+
+   ```powershell
+    move .\TYCHO.txt ..\DATOS2\
+    ```
+
+8. **Crea un nuevo archivo formado por la unión de los dos anteriores (sin volver a escribir el texto) y guárdalo dentro de la carpeta HISTORIA con el nombre TOTAL.TXT**
+
+    Desde la carpeta *CIENCIA*, donde estan alojados los 2 archivos que debemos unir ejecutamos lo siguiente: 
+
+    ```powershell
+    type *.txt > nuevo.temp
+    ren .\nuevo.temp .\nuevo.txt
+    ```
+
+    El archivo lo he creado en *CIENCIA*, por lo que lo movere a *HISTORIA*:
+
+    ```powershell
+    move .\nuevo.txt ..\HISTORIA\
+    ```
+
+9. **Abre el archivo KEPLER.TXT almacenado en la carpeta CIENCIA y añade el siguiente texto:**
+
+    >“Kepler aplicó sus teorías a los satélites de Júpiter, descubiertos por Galileo a través de un pequeño telescopio, cuya introducción en la observación astronómica constituye uno de los hitos de la astronomía.”

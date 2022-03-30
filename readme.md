@@ -2,6 +2,16 @@
 
 **Ejercicios básicos de MS-DOS**
 
+---
+### Índice
+[Ejercicio 1]([images/ejercicio6.png](https://github.com/lisb3th21/Ejercicios-basicos-de-MS-DOS#ejercicio-1))
+
+[Ejercicio 2]([images/ejercicio6.png](https://github.com/lisb3th21/Ejercicios-basicos-de-MS-DOS#ejercicio-2))
+
+[Ejercicio 3]([images/ejercicio6.png](https://github.com/lisb3th21/Ejercicios-basicos-de-MS-DOS#ejercicio-3))
+
+[Ejercicio 4]([images/ejercicio6.png](https://github.com/lisb3th21/Ejercicios-basicos-de-MS-DOS#ejercicio-4))
+
 ## Ejercicio 1
 
 ---
